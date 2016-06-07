@@ -13,8 +13,12 @@
 		<image id="hat" src="img/gradHat.png">
 		<image id="Thomas" src="img/sadFace.png">
 		<image id="shineOn" src="img/shineOn.png">
+		<image id="confetti" src="img/confetti.gif">
 	</body>
 	<script>
+		$('#shineOn').hide();
+		$('#confetti').hide();
+		$("body").css("overflow", "hidden");
 		
 		var elem0 = document.getElementById("hat"); 
 		var elem1 = document.getElementById("Thomas"); 
@@ -23,6 +27,14 @@
 		var pos1 = window.innerHeight + 10;
 		var id = setInterval(frame, 10);
 		var hatThomasConnect = 0;
+		
+		myAudio = new Audio('testAudio.mp3'); 
+		myAudio.addEventListener('ended', function() {
+			this.currentTime = 0;
+			this.play();
+		}, false);
+		//myAudio.play();
+		
 
 		function frame() {
 			hatThomasConnect = pos1 - pos0;
@@ -31,11 +43,12 @@
 				$("#Thomas").attr('src', 'img/happyFace.png');
 				var shineTop = parseInt($('#Thomas').css('top').replace(/[^\d.]/g, '' ));
 				var shineLeft = parseInt($('#Thomas').css('left').replace(/[^\d.]/g, '' ));
-				console.log("top = " + parseInt(shineTop) + "     left = " + parseInt(shineLeft));
 				elem2.style.top= (shineTop - 1121) + 'px';
 				elem2.style.left = (shineLeft - 1375) + 'px';
-				console.log(elem2.style.top);
 				rotateAnimation('shineOn', 40);
+				$('#shineOn').fadeIn("slow");
+				$('#confetti').fadeIn("slow");
+				myAudio.play();
 			} else {
 				pos0++; 
 				pos1--;
@@ -73,12 +86,5 @@
 			}
 		}
 		
-		myAudio = new Audio('testAudio.mp3'); 
-		myAudio.addEventListener('ended', function() {
-			this.currentTime = 0;
-			this.play();
-		}, false);
-		//myAudio.play();
-	
 	</script>
 </html>
