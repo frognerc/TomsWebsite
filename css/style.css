@@ -1,0 +1,36 @@
+/*********************************
+MAIN BODY
+*********************************/
+
+
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	background: orange;
+}
+
+#hat {
+	position: absolute;
+	z-index: 2;
+	top: 0px;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+#Thomas {
+	position: absolute;
+	z-index: 1;
+	top: 110vh;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+#shineOn {
+	position: absolute;
+	z-index: 0;
+	top: 0px;
+	left: 0px;
+}
