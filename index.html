@@ -9,7 +9,7 @@
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="http://static.giantbomb.com/js/compiled/public/videoEmbedApi.js" type="text/javascript"></script>
 	</head>
-	<body>
+	<body id="mainBody">
 		<image id="hat" src="img/gradHat.png">
 		<image id="Thomas" src="img/sadFace.png">
 		<image id="shineOn" src="img/shineOn.png">
@@ -20,6 +20,15 @@
 		$('#confetti').hide();
 		$("body").css("overflow", "hidden");
 		
+		myFunction("tempImage");
+		myFunction("nonDeleteClass");
+		myFunction("tempImage");
+		myFunction("tempImage");
+		myFunction("nonDeleteClass");
+		myFunction("nonDeleteClass");
+		myFunction("nonDeleteClass");
+		myFunction("tempImage");
+		
 		var elem0 = document.getElementById("hat"); 
 		var elem1 = document.getElementById("Thomas"); 
 		var elem2 = document.getElementById("shineOn");
@@ -27,6 +36,7 @@
 		var pos1 = window.innerHeight + 10;
 		var id = setInterval(frame, 10);
 		var hatThomasConnect = 0;
+		var parent = document.getElementById("mainBody");
 		
 		myAudio = new Audio('testAudio.mp3'); 
 		myAudio.addEventListener('ended', function() {
@@ -34,7 +44,6 @@
 			this.play();
 		}, false);
 		//myAudio.play();
-		
 
 		function frame() {
 			hatThomasConnect = pos1 - pos0;
@@ -48,7 +57,9 @@
 				rotateAnimation('shineOn', 40);
 				$('#shineOn').fadeIn("slow");
 				$('#confetti').fadeIn("slow");
-				myAudio.play();
+				//myAudio.play();
+				deleteAllImages()
+				
 			} else {
 				pos0++; 
 				pos1--;
@@ -85,6 +96,37 @@
 				degrees = 1;
 			}
 		}
+		
+		function myFunction(classTestName) {
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "img/TomGradPhotos/0.jpg");
+			x.setAttribute("class", "tempImage");
+			x.setAttribute("id", classTestName);
+			x.setAttribute("width", "304");
+			x.setAttribute("width", "228");
+			document.body.appendChild(x);
+		}
+		
+		function deleteAllImages() {
+			var i = 0;
+			var arrayStuff = document.getElementsByClassName("tempImage");
+			
+			for(i = 0; i < arrayStuff.length; i++){
+				console.log(arrayStuff[i].id);
+				if(arrayStuff[i].id == "nonDeleteClass"){
+					parent.removeChild(arrayStuff[i]);
+				}
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	</script>
 </html>
