@@ -4,129 +4,18 @@
 	<meta charset="utf-8">
 	<title>Congratulations Thomas!</title>	
 		<link href='https://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400,400italic,700,700italic,800' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style.css">	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="http://static.giantbomb.com/js/compiled/public/videoEmbedApi.js" type="text/javascript"></script>
 	</head>
 	<body id="mainBody">
+		<h1 class="revealText" id="congrats">CONGRATULATIONS THOMAS!</h1>
+		<h2 class="revealText" id="subCongrats">We all knew you could do it! Nice job!</h2>
 		<image id="hat" src="img/gradHat.png">
 		<image id="Thomas" src="img/sadFace.png">
 		<image id="shineOn" src="img/shineOn.png">
 		<image id="confetti" src="img/confetti.gif">
 	</body>
-	<script>
-		$('#shineOn').hide();
-		$('#confetti').hide();
-		$("body").css("overflow", "hidden");
-		
-		myFunction("tempImage");
-		myFunction("nonDeleteClass");
-		myFunction("tempImage");
-		myFunction("tempImage");
-		myFunction("nonDeleteClass");
-		myFunction("nonDeleteClass");
-		myFunction("nonDeleteClass");
-		myFunction("tempImage");
-		
-		var elem0 = document.getElementById("hat"); 
-		var elem1 = document.getElementById("Thomas"); 
-		var elem2 = document.getElementById("shineOn");
-		var pos0 = -440;
-		var pos1 = window.innerHeight + 10;
-		var id = setInterval(frame, 10);
-		var hatThomasConnect = 0;
-		var parent = document.getElementById("mainBody");
-		
-		myAudio = new Audio('testAudio.mp3'); 
-		myAudio.addEventListener('ended', function() {
-			this.currentTime = 0;
-			this.play();
-		}, false);
-		//myAudio.play();
-
-		function frame() {
-			hatThomasConnect = pos1 - pos0;
-			if (hatThomasConnect <= 85) {
-				clearInterval(id);
-				$("#Thomas").attr('src', 'img/happyFace.png');
-				var shineTop = parseInt($('#Thomas').css('top').replace(/[^\d.]/g, '' ));
-				var shineLeft = parseInt($('#Thomas').css('left').replace(/[^\d.]/g, '' ));
-				elem2.style.top= (shineTop - 1121) + 'px';
-				elem2.style.left = (shineLeft - 1375) + 'px';
-				rotateAnimation('shineOn', 40);
-				$('#shineOn').fadeIn("slow");
-				$('#confetti').fadeIn("slow");
-				//myAudio.play();
-				deleteAllImages()
-				
-			} else {
-				pos0++; 
-				pos1--;
-				elem0.style.top = pos0 + 'px'; 
-				elem1.style.top = pos1 + 'px'; 
-			}
-		}
-		function spin() {
-			var c = document.getElementById("Thomas");
-			var ctx = c.getContext("2d");
-			ctx.rotate(20 * Math.PI / 180);
-			ctx.fillRect(50, 20, 100, 50);
-		}
-		
-		//Code below found at https://www.developphp.com/video/JavaScript/Transform-Rotate-Image-Spin-Smooth-Animation-Tutorial
-		var looper;
-		var degrees = 0;
-		function rotateAnimation(el,speed){
-			var elem = document.getElementById(el);
-			if(navigator.userAgent.match("Chrome")){
-				elem.style.WebkitTransform = "rotate("+degrees+"deg)";
-			} else if(navigator.userAgent.match("Firefox")){
-				elem.style.MozTransform = "rotate("+degrees+"deg)";
-			} else if(navigator.userAgent.match("MSIE")){
-				elem.style.msTransform = "rotate("+degrees+"deg)";
-			} else if(navigator.userAgent.match("Opera")){
-				elem.style.OTransform = "rotate("+degrees+"deg)";
-			} else {
-				elem.style.transform = "rotate("+degrees+"deg)";
-			}
-			looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
-			degrees++;
-			if(degrees > 359){
-				degrees = 1;
-			}
-		}
-		
-		function myFunction(classTestName) {
-			var x = document.createElement("IMG");
-			x.setAttribute("src", "img/TomGradPhotos/0.jpg");
-			x.setAttribute("class", "tempImage");
-			x.setAttribute("id", classTestName);
-			x.setAttribute("width", "304");
-			x.setAttribute("width", "228");
-			document.body.appendChild(x);
-		}
-		
-		function deleteAllImages() {
-			var i = 0;
-			var arrayStuff = document.getElementsByClassName("tempImage");
-			
-			for(i = 0; i < arrayStuff.length; i++){
-				console.log(arrayStuff[i].id);
-				if(arrayStuff[i].id == "nonDeleteClass"){
-					parent.removeChild(arrayStuff[i]);
-				}
-			}
-			
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</script>
+	<script src="app.js" type="text/javascript" charset="utf-8"></script>
 </html>

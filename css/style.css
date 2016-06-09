@@ -10,6 +10,7 @@ body {
 	top: 0;
 	left: 0;
 	background: orange;
+	text-align: center;
 }
 
 #hat {
@@ -18,6 +19,28 @@ body {
 	top: 0px;
 	left: 50%;
 	transform: translate(-50%, 0);
+}
+
+#congrats {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 10;
+	top: 0;
+	color: #000000;
+	font-size: 600%;
+	font-family: 'Luckiest Guy', cursive;
+}
+
+#subCongrats {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 10;
+	top: 700px;
+	color: #000000;
+	font-size: 300%;
+	font-family: 'Luckiest Guy', cursive;
 }
 
 #Thomas {
@@ -42,4 +65,60 @@ body {
 	left: 0px;
 	width: 100%;
 	height: 100%;
+}
+
+@media (max-width: 1024px) { 
+	body{
+		background: purple;
+	}
+
+	#congrats {
+		font-size: 600%;
+	}
+
+	#subCongrats {
+		top: 550px;
+		font-size: 300%;
+	}
+}
+
+@media (max-width: 768px) { 
+	body{
+		background: red;
+	}
+	#hat {
+		width: 70%;
+	}
+
+	#congrats {
+		font-size: 500%;
+	}
+
+	#subCongrats {
+		top: 525px;
+		font-size: 300%;
+	}
+
+	#Thomas {
+		width: 40%;
+	}
+}
+
+@media (max-width: 414px) { 
+	#hat {
+		width: 100%;
+	}
+
+	#congrats {
+		font-size: 275%;
+	}
+
+	#subCongrats {
+		top: 525px;
+		font-size: 200%;
+	}
+
+	#Thomas {
+		width: 60%;
+	}
 }
