@@ -1,6 +1,7 @@
 $('#shineOn').hide();
 $('#confetti').hide();
 $('.revealText').hide();
+$('#hat').hide();
 $("body").css("overflow", "hidden");
 
 var elem0 = document.getElementById("hat"); 
@@ -8,7 +9,7 @@ var elem1 = document.getElementById("Thomas");
 var elem2 = document.getElementById("shineOn");
 var pos0 = -440;
 var pos1 = window.innerHeight + 10;
-var id = setInterval(frame, 10);
+var id = 0;
 var hatThomasConnect = 0;
 var parent = document.getElementById("mainBody");
 
@@ -18,6 +19,12 @@ myAudio.addEventListener('ended', function() {
 	this.play();
 }, false);
 //myAudio.play();
+
+$("#beginButton").click(function(){
+	$("#beginButton").fadeOut("fast");
+	$("#warningNote").fadeOut("fast");
+	id = setInterval(frame, 10);
+})
 
 function frame() {
 	hatThomasConnect = pos1 - pos0;
@@ -31,6 +38,8 @@ function frame() {
 		rotateAnimation('shineOn', 40);
 		$('#shineOn').fadeIn("slow");
 		$('#confetti').fadeIn("slow");
+		//var headHeight = parseInt($('#Thomas').css('height').replace(/[^\d.]/g, '' ));
+		//$('#subCongrats').css('top', pos1 + headHeight);
 		
 		setTimeout(function(){$('.revealText').fadeIn("slow");}, 3000);
 		myAudio.play();
@@ -39,6 +48,7 @@ function frame() {
 	} else {
 		pos0++; 
 		pos1--;
+		$('#hat').show();
 		
 		//pos0 += 10;
 		//pos1 -= 10;
@@ -80,7 +90,7 @@ function startImageSpawner() {
 	var moveSpeed = (Math.random() * 5) + 1;
 	var leftSpawn = (Math.random() * (window.innerWidth - 100)) + 1;
 	var imageSize = (Math.random() * 300) + 150;
-	var imageNumber = Math.floor((Math.random() * 56));
+	var imageNumber = Math.floor((Math.random() * 57));
 	
 	var x = document.createElement("IMG");
 	x.setAttribute("src", "img/TomGradPhotos/"+ imageNumber +".jpg");

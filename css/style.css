@@ -13,6 +13,11 @@ body {
 	text-align: center;
 }
 
+#warningNote {
+	font-size: 200%;
+	
+}
+
 #hat {
 	position: absolute;
 	z-index: 2;
@@ -67,38 +72,44 @@ body {
 	height: 100%;
 }
 
-@media (max-width: 1024px) { 
-	body{
-		background: purple;
-	}
+button {
+	background: #ff8000;
+  	border: none;
+  	border-radius: 10px;
+  	color: #000;
+	font-family: 'Luckiest Guy', cursive;
+  	font-size: 35px;
+  	width: 440px;
+  	padding: 40px 0;
+  	margin: 200px 10px auto 10px;
+  	outline: none;
+  	cursor: pointer;	
+	box-shadow: 5px 5px 10px 5px #4A4A4A;
+}
 
+button:hover {
+	background: #cc6600;
+}
+
+@media (max-width: 1024px) { 
 	#congrats {
-		font-size: 600%;
+		font-size: 10vw;
 	}
 
 	#subCongrats {
-		top: 550px;
-		font-size: 300%;
+		top: 575px;
+		font-size: 7vw;
+	}
+	
+	button {
+		width: 80vw;
 	}
 }
 
 @media (max-width: 768px) { 
-	body{
-		background: red;
-	}
 	#hat {
 		width: 70%;
 	}
-
-	#congrats {
-		font-size: 500%;
-	}
-
-	#subCongrats {
-		top: 525px;
-		font-size: 300%;
-	}
-
 	#Thomas {
 		width: 40%;
 	}
@@ -108,16 +119,6 @@ body {
 	#hat {
 		width: 100%;
 	}
-
-	#congrats {
-		font-size: 275%;
-	}
-
-	#subCongrats {
-		top: 525px;
-		font-size: 200%;
-	}
-
 	#Thomas {
 		width: 60%;
 	}
