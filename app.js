@@ -13,7 +13,7 @@ var id = 0;
 var hatThomasConnect = 0;
 var parent = document.getElementById("mainBody");
 
-myAudio = new Audio('testAudio.mp3'); 
+myAudio = new Audio('testAudio.ogg'); 
 myAudio.addEventListener('ended', function() {
 	this.currentTime = 0;
 	this.play();
@@ -25,6 +25,7 @@ $("#beginButton").click(function(){
 	$("#warningNote").fadeOut("fast");
 	id = setInterval(frame, 10);
 })
+
 
 function frame() {
 	hatThomasConnect = pos1 - pos0;
