@@ -39,12 +39,10 @@ function frame() {
 		rotateAnimation('shineOn', 40);
 		$('#shineOn').fadeIn("slow");
 		$('#confetti').fadeIn("slow");
-		//var headHeight = parseInt($('#Thomas').css('height').replace(/[^\d.]/g, '' ));
-		//$('#subCongrats').css('top', pos1 + headHeight);
 		
 		setTimeout(function(){$('.revealText').fadeIn("slow");}, 3000);
 		myAudio.play();
-		var spawnImages = setInterval(startImageSpawner, 1000);
+		var spawnImages = setInterval(startImageSpawner, 2000);
 		var moveID = setInterval(moveImages, 10);
 	} else {
 		pos0++; 

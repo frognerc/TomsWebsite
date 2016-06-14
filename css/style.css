@@ -91,18 +91,27 @@ button:hover {
 	background: #cc6600;
 }
 
-@media (max-width: 1024px) { 
+@media (max-width: 1200px) { 
+	
 	#congrats {
-		font-size: 10vw;
+		font-size: 8vw;
 	}
 
 	#subCongrats {
-		top: 575px;
-		font-size: 7vw;
+		top: 450px;
+		font-size: 5vw;
 	}
 	
+	#hat {
+		width: 500px;
+	}
+	#Thomas {
+		width: 300px;
+	}
+	
+	
 	button {
-		width: 80vw;
+		width: 70vw;
 	}
 }
 
